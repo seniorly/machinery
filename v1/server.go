@@ -13,17 +13,17 @@ import (
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/trace"
 
-	"github.com/RichardKnop/machinery/v1/backends/result"
-	"github.com/RichardKnop/machinery/v1/brokers/eager"
-	"github.com/RichardKnop/machinery/v1/config"
-	"github.com/RichardKnop/machinery/v1/log"
-	"github.com/RichardKnop/machinery/v1/tasks"
-	"github.com/RichardKnop/machinery/v1/tracing"
-	"github.com/RichardKnop/machinery/v1/utils"
+	"github.com/seniorly/machinery/v1/backends/result"
+	"github.com/seniorly/machinery/v1/brokers/eager"
+	"github.com/seniorly/machinery/v1/config"
+	"github.com/seniorly/machinery/v1/log"
+	"github.com/seniorly/machinery/v1/tasks"
+	"github.com/seniorly/machinery/v1/tracing"
+	"github.com/seniorly/machinery/v1/utils"
 
-	backendsiface "github.com/RichardKnop/machinery/v1/backends/iface"
-	brokersiface "github.com/RichardKnop/machinery/v1/brokers/iface"
-	lockiface "github.com/RichardKnop/machinery/v1/locks/iface"
+	backendsiface "github.com/seniorly/machinery/v1/backends/iface"
+	brokersiface "github.com/seniorly/machinery/v1/brokers/iface"
+	lockiface "github.com/seniorly/machinery/v1/locks/iface"
 )
 
 // Server is the main Machinery object and stores all configuration

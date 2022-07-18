@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/RichardKnop/machinery/v1/utils"
+	"github.com/seniorly/machinery/v1/utils"
 
 	"github.com/google/uuid"
 )

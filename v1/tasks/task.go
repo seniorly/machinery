@@ -9,7 +9,7 @@ import (
 
 	"go.opentelemetry.io/otel/trace"
 
-	"github.com/RichardKnop/machinery/v1/log"
+	"github.com/seniorly/machinery/v1/log"
 )
 
 // ErrTaskPanicked ...

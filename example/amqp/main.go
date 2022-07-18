@@ -14,10 +14,10 @@ import (
 	"go.opentelemetry.io/otel/baggage"
 
 	"github.com/RichardKnop/machinery/v1"
-	"github.com/RichardKnop/machinery/v1/config"
-	"github.com/RichardKnop/machinery/v1/log"
-	"github.com/RichardKnop/machinery/v1/tasks"
-	"github.com/RichardKnop/machinery/v1/tracing"
+	"github.com/seniorly/machinery/v1/config"
+	"github.com/seniorly/machinery/v1/log"
+	"github.com/seniorly/machinery/v1/tasks"
+	"github.com/seniorly/machinery/v1/tracing"
 
 	exampletasks "github.com/RichardKnop/machinery/example/tasks"
 	tracers "github.com/RichardKnop/machinery/example/tracers"

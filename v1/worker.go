@@ -10,12 +10,12 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/RichardKnop/machinery/v1/backends/amqp"
-	"github.com/RichardKnop/machinery/v1/brokers/errs"
-	"github.com/RichardKnop/machinery/v1/log"
-	"github.com/RichardKnop/machinery/v1/retry"
-	"github.com/RichardKnop/machinery/v1/tasks"
-	"github.com/RichardKnop/machinery/v1/tracing"
+	"github.com/seniorly/machinery/v1/backends/amqp"
+	"github.com/seniorly/machinery/v1/brokers/errs"
+	"github.com/seniorly/machinery/v1/log"
+	"github.com/seniorly/machinery/v1/retry"
+	"github.com/seniorly/machinery/v1/tasks"
+	"github.com/seniorly/machinery/v1/tracing"
 	"go.opentelemetry.io/otel/trace"
 )
 
