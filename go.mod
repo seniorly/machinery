@@ -1,4 +1,4 @@
-module github.com/RichardKnop/machinery
+module github.com/seniorly/machinery
 
 go 1.15
 
