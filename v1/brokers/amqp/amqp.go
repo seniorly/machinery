@@ -5,16 +5,17 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"net/http"
 	"sync"
 	"time"
 
-	"github.com/RichardKnop/machinery/v1/brokers/errs"
-	"github.com/RichardKnop/machinery/v1/brokers/iface"
-	"github.com/RichardKnop/machinery/v1/common"
-	"github.com/RichardKnop/machinery/v1/config"
-	"github.com/RichardKnop/machinery/v1/log"
-	"github.com/RichardKnop/machinery/v1/tasks"
 	"github.com/pkg/errors"
+	"github.com/seniorly/machinery/v1/brokers/errs"
+	"github.com/seniorly/machinery/v1/brokers/iface"
+	"github.com/seniorly/machinery/v1/common"
+	"github.com/seniorly/machinery/v1/config"
+	"github.com/seniorly/machinery/v1/log"
+	"github.com/seniorly/machinery/v1/tasks"
 	"github.com/streadway/amqp"
 )
 
@@ -230,7 +231,7 @@ func (b *Broker) Publish(ctx context.Context, signature *tasks.Signature) error 
 		false,                       // mandatory
 		false,                       // immediate
 		amqp.Publishing{
-			Headers:      amqp.Table(signature.Headers),
+			Headers:      convertHeaders(signature.Headers),
 			ContentType:  "application/json",
 			Body:         msg,
 			Priority:     signature.Priority,
@@ -398,7 +399,7 @@ func (b *Broker) delay(signature *tasks.Signature, delayMs int64) error {
 		false,                       // mandatory
 		false,                       // immediate
 		amqp.Publishing{
-			Headers:      amqp.Table(signature.Headers),
+			Headers:      convertHeaders(signature.Headers),
 			ContentType:  "application/json",
 			Body:         message,
 			DeliveryMode: amqp.Persistent,
@@ -489,4 +490,14 @@ func (b *Broker) GetPendingTasks(queue string) ([]*tasks.Signature, error) {
 	}
 
 	return dumper.Signatures, nil
+}
+
+func convertHeaders(headers http.Header) amqp.Table {
+	table := make(amqp.Table, len(headers))
+
+	for k, v := range headers {
+		table[k] = v
+	}
+
+	return table
 }

@@ -392,7 +392,7 @@ type Interface interface {
 }
 ```
 
-Then just set the logger in your setup code by calling `Set` function exported by `github.com/RichardKnop/machinery/v1/log` package:
+Then just set the logger in your setup code by calling `Set` function exported by `github.com/seniorly/machinery/v1/log` package:
 
 ```go
 log.Set(myCustomLogger)
@@ -404,7 +404,7 @@ A Machinery library must be instantiated before use. The way this is done is by 
 
 ```go
 import (
-  "github.com/RichardKnop/machinery/v1/config"
+  "github.com/seniorly/machinery/v1/config"
   "github.com/RichardKnop/machinery/v1"
 )
 
@@ -632,7 +632,7 @@ Tasks can be called by passing an instance of `Signature` to an `Server` instanc
 
 ```go
 import (
-  "github.com/RichardKnop/machinery/v1/tasks"
+  "github.com/seniorly/machinery/v1/tasks"
 )
 
 signature := &tasks.Signature{
@@ -797,7 +797,7 @@ Running a single asynchronous task is fine but often you will want to design a w
 
 ```go
 import (
-  "github.com/RichardKnop/machinery/v1/tasks"
+  "github.com/seniorly/machinery/v1/tasks"
   "github.com/RichardKnop/machinery/v1"
 )
 
@@ -858,7 +858,7 @@ for _, asyncResult := range asyncResults {
 
 ```go
 import (
-  "github.com/RichardKnop/machinery/v1/tasks"
+  "github.com/seniorly/machinery/v1/tasks"
   "github.com/RichardKnop/machinery/v1"
 )
 
@@ -934,7 +934,7 @@ for _, result := range results {
 
 ```go
 import (
-  "github.com/RichardKnop/machinery/v1/tasks"
+  "github.com/seniorly/machinery/v1/tasks"
   "github.com/RichardKnop/machinery/v1"
 )
 
@@ -1020,7 +1020,7 @@ Machinery now supports scheduling periodic tasks and workflows. See examples bel
 
 ```go
 import (
-  "github.com/RichardKnop/machinery/v1/tasks"
+  "github.com/seniorly/machinery/v1/tasks"
 )
 
 signature := &tasks.Signature{
@@ -1046,7 +1046,7 @@ if err != nil {
 
 ```go
 import (
-  "github.com/RichardKnop/machinery/v1/tasks"
+  "github.com/seniorly/machinery/v1/tasks"
   "github.com/RichardKnop/machinery/v1"
 )
 
@@ -1089,7 +1089,7 @@ if err != nil {
 
 ```go
 import (
-  "github.com/RichardKnop/machinery/v1/tasks"
+  "github.com/seniorly/machinery/v1/tasks"
   "github.com/RichardKnop/machinery/v1"
 )
 
@@ -1142,7 +1142,7 @@ if err != nil {
 
 ```go
 import (
-  "github.com/RichardKnop/machinery/v1/tasks"
+  "github.com/seniorly/machinery/v1/tasks"
   "github.com/RichardKnop/machinery/v1"
 )
 

@@ -4,10 +4,10 @@ import (
 	"os"
 	"testing"
 
-	"github.com/RichardKnop/machinery/v1/backends/iface"
-	"github.com/RichardKnop/machinery/v1/backends/mongo"
-	"github.com/RichardKnop/machinery/v1/config"
-	"github.com/RichardKnop/machinery/v1/tasks"
+	"github.com/seniorly/machinery/v1/backends/iface"
+	"github.com/seniorly/machinery/v1/backends/mongo"
+	"github.com/seniorly/machinery/v1/config"
+	"github.com/seniorly/machinery/v1/tasks"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -4,9 +4,9 @@ import (
 	"testing"
 
 	"github.com/RichardKnop/machinery/v1"
-	"github.com/RichardKnop/machinery/v1/common"
-	"github.com/RichardKnop/machinery/v1/config"
-	"github.com/RichardKnop/machinery/v1/tasks"
+	"github.com/seniorly/machinery/v1/common"
+	"github.com/seniorly/machinery/v1/config"
+	"github.com/seniorly/machinery/v1/tasks"
 	"github.com/stretchr/testify/assert"
 )
 
