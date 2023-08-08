@@ -8,10 +8,10 @@ import (
 	"sync"
 	"time"
 
-	"github.com/go-redis/redis/extra/redisotel/v8"
-	"github.com/go-redis/redis/v8"
 	"github.com/go-redsync/redsync/v4"
-	redsyncgoredis "github.com/go-redsync/redsync/v4/redis/goredis/v8"
+	redsyncgoredis "github.com/go-redsync/redsync/v4/redis/goredis/v9"
+	"github.com/redis/go-redis/extra/redisotel/v9"
+	"github.com/redis/go-redis/v9"
 
 	"github.com/seniorly/machinery/v1/backends/iface"
 	"github.com/seniorly/machinery/v1/common"
@@ -60,7 +60,8 @@ func NewGR(cnf *config.Config, addrs []string, db int) iface.Backend {
 
 		b.rclient = redis.NewUniversalClient(ropt)
 	}
-	b.rclient.AddHook(redisotel.NewTracingHook())
+	redisotel.InstrumentTracing(b.rclient)
+	redisotel.InstrumentMetrics(b.rclient)
 	b.redsync = redsync.New(redsyncgoredis.NewPool(b.rclient))
 	return b
 }

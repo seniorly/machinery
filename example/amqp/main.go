@@ -13,14 +13,14 @@ import (
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/baggage"
 
-	"github.com/RichardKnop/machinery/v1"
+	"github.com/seniorly/machinery/v1"
 	"github.com/seniorly/machinery/v1/config"
 	"github.com/seniorly/machinery/v1/log"
 	"github.com/seniorly/machinery/v1/tasks"
 	"github.com/seniorly/machinery/v1/tracing"
 
-	exampletasks "github.com/RichardKnop/machinery/example/tasks"
-	tracers "github.com/RichardKnop/machinery/example/tracers"
+	exampletasks "github.com/seniorly/machinery/example/tasks"
+	tracers "github.com/seniorly/machinery/example/tracers"
 )
 
 var (
@@ -272,7 +272,9 @@ func send() error {
 	defer span.End()
 
 	batchID := uuid.New().String()
-	baggage.ContextWithBaggage(ctx, "batch_id", batchID)
+	mem, _ := baggage.NewMember("batch_id", batchID)
+	b, _ := baggage.New(mem)
+	baggage.ContextWithBaggage(ctx, b)
 	span.SetAttributes(attribute.String("batch_id", batchID))
 
 	log.INFO.Println("Starting batch:", batchID)
